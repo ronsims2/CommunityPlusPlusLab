@@ -62,4 +62,20 @@ input()
 
 #Dictionaries - an unordered list of items that stores a value by a name (key/pair)
 
+# Dictionaries are useful for storing data that is easy for people to read and access, It also looks like a Javascript Object
+data = {
+	"name": "Ronaldo",
+	"age": 42,
+	"city": "Cleveland",
+	"friends": ["Bob", "Sarah", "Kels"],
+	"powers": {
+		"flight": True,
+		"invisibility": False,
+		"teleportation": False,
+		"super_strength": True
+	}
+}
+
+print(data)
+
 

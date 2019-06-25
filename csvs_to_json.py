@@ -2,7 +2,7 @@ def create_heroes(headers, h):
 	hero = {}
 	for i,hdr in enumerate(headers):
 		#Strip white space
-		hero[hdr].strip() = h[i];
+		hero[hdr.strip()] = h[i].strip();
 		
 	print(hero)
 	return hero

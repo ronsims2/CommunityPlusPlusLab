@@ -1,3 +1,5 @@
+import json
+
 def create_heroes(headers, h, f, p):
 	hero = {}
 	for i,hdr in enumerate(headers):
@@ -6,7 +8,7 @@ def create_heroes(headers, h, f, p):
 	
 	hero['friends'] = f[hero['id']]
 	hero['powers'] = p[hero['id']]
-	print(hero)
+	# print(hero)
 	return hero
 	
 def map_key_pairs_to_list(filename):
@@ -27,6 +29,8 @@ power_ref = map_key_pairs_to_list('heroes_powers.csv')
 
 #print(friend_ref)
 #print(power_ref)
+
+hero_list = []
 	
 with open('heroes.csv') as heroes:
 	headers = None
@@ -34,4 +38,13 @@ with open('heroes.csv') as heroes:
 		if i == 0:
 			headers = h.split(',')
 		else:
-			hero_list = create_heroes(headers, h.split(','), friend_ref, power_ref)
+			hero = create_heroes(headers, h.split(','), friend_ref, power_ref)
+			hero_list.append(hero)
+			
+
+#with open('heroes.json', 'r') as jf:
+	#json_data = json.dumps(hero_list)
+	#jf.write(json_data)
+	
+json_data = json.dumps(hero_list)
+print(json_data)
